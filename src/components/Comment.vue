@@ -1,12 +1,15 @@
 <template>
     <div>
-        <div v-for="comment in comments" v-bind:key="comment.id">
-             <h3 id='comment' v-on:click="boxx">
-               <i class="fas fa-comments"></i>
-            </h3>
-            <div id="box">
-                <p>{{comment.comments}}</p>
-            </div>
+        <div v-for="comment in comments" v-bind:key="comment.commentId" >
+             <h3 id='comment' v-on:click="boxx"> <i class="fas fa-comments"></i> </h3> 
+             <!-- logo -->
+            <!-- comment box -->
+             <div id="boxy" ref="commentBox">
+                 <div v-for="c in comment.comments" v-bind:key="c.commentId">
+                    <p>{{c}}</p>
+                </div>
+             </div>
+            
             
             <!-- <ul><li>{{comment.comments}}<li></ul> -->
         </div>  
@@ -16,10 +19,10 @@
 <script>
 export default {
     name: 'Comment',
-    props: ['comments'],
+    props: ['comments', 'commentId'],
     methods:{
         boxx(){
-            // this.style.display = 'block'
+            
         }
     }
 }
@@ -35,11 +38,15 @@ export default {
         margin: 35px;
         margin-top: 100px
     }
-    #box{
+    #boxy{
         margin: 5px;
         background-color: beige;
         display: inline-block;
+        width: 300px;
         /* display: block; */
+    }
+    #overideStyle{
+        display: none;
     }
 
 </style>

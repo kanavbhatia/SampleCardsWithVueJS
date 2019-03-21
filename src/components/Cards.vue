@@ -4,7 +4,7 @@
             <photo v-bind:url="card.picURL"/>
             <info v-bind:infos="card.about"/>
             <like v-bind:likes="card.rating" v-bind:likeId="card.id"  v-on:inc-like="$emit('inc-like',card.id)"/>
-            <comment v-bind:comments="card.rating" />
+            <comment v-bind:comments="card.rating" v-bind:commentId="card.id" />
         </div>  
     </div>
 </template>
