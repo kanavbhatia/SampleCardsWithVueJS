@@ -22,7 +22,8 @@ export default {
     props: ['comments', 'commentId'],
     methods:{
         boxx(){
-            
+            // console.log(this.$refs.commentBox.style)
+            document.getElementById('boxy').style.display = 'none';
         }
     }
 }
@@ -44,9 +45,6 @@ export default {
         display: inline-block;
         width: 300px;
         /* display: block; */
-    }
-    #overideStyle{
-        display: none;
     }
 
 </style>
